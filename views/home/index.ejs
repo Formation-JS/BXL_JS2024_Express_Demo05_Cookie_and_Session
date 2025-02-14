@@ -2,4 +2,8 @@
 
 <h1>Demo 05 - Cookie & Session</h1>
 
+<% if(locals.session.isConnected) { %>
+    <p>Bienvenue <%= locals.session.user.username %></p>
+<% } %>
+
 <%- include('../_partials/footer.ejs') %>

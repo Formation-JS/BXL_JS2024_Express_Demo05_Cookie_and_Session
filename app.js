@@ -26,6 +26,10 @@ app.use(session({
     resave: true,
     //? En prod, ajouter 'store' avec un store compatible (package ou implémenté)
 }));
+app.use((req, res, next) => {
+    res.locals.session = req.session;
+    next();
+});
 
 //! Routing
 app.use(homeRouter);
