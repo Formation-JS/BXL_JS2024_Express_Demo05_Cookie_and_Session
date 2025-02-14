@@ -1,0 +1,19 @@
+<%- include('../_partials/header.ejs') %>
+
+<h1>Login</h1>
+
+<form method="post">
+    <div>
+        <label for="input-username">Nom d'utilisateur</label>
+        <input id="input-username" name="username" type="text">
+    </div>
+    <div>
+        <label for="input-password">Mot de passe</label>
+        <input id="input-password" name="password" type="password">
+    </div>
+    <div>
+        <button type="submit">Se connecter</button>
+    </div>
+</form>
+
+<%- include('../_partials/footer.ejs') %>
