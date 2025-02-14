@@ -13,8 +13,12 @@ const authController = {
             return;
         }
 
-        //TODO Créer la session
-
+        //! Créer la session
+        req.session.user = {
+            id: 42,
+            username
+        };
+        req.session.isConnected = true;
         
         //! Redirection sur la page d'accueil
         res.redirect('/');
@@ -28,7 +32,15 @@ const authController = {
     },
 
     logout: (req, res) => {
-        res.sendStatus(501);
+        //! Destruction de la session ᕦ(ò_óˇ)ᕤ
+        //? La méthode "destroy" Clear TOUTES les données de la session
+        req.session.destroy();
+        //? Alternative : Effacer les valeurs manuellement
+        // req.session.user = null;
+        // req.session.isConnected = false;
+
+        //! Redirection sur la page d'accueil
+        res.redirect('/');
     }
 }
 

@@ -12,6 +12,9 @@ const homeController = {
             sameSite: 'strict'
         });
 
+        // Affichage de l'état de la session
+        console.log(req.session);
+
         res.render('home/index');
     },
 
